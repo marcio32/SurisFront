@@ -72,7 +72,7 @@ export async function createReservation(clientName: string, serviceId: number, d
       body: JSON.stringify({
         clientName,  
         serviceId,  
-        dateReservation: new Date(dateReservation).toISOString() // Convertir fecha a ISO
+        dateReservation: new Date(dateReservation).toISOString() 
       }),
     });
 
