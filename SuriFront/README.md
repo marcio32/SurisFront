@@ -1,54 +1,73 @@
-# React + TypeScript + Vite
+# 🌐 SurisFront - Sistema de Reservas
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**SurisFront** es una aplicación web desarrollada con **React** y **TypeScript** que funciona como el frontend para el sistema de reservas. Está diseñada para interactuar con la [API de Suris]([https://github.com/marcio32/SurisAPI]) y proporcionar una interfaz amigable para la gestión de reservas de servicios.
 
-Currently, two official plugins are available:
+## 📌 Características
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- ✅ **Interfaz de usuario intuitiva** para la gestión de reservas.
+- ✅ **Integración con la API de Suris** para autenticación y operaciones CRUD.
+- ✅ **Desarrollado con React, TypeScript y Vite** para un rendimiento óptimo.
+- ✅ **Estilizado moderno** utilizando material UI.
 
-## Expanding the ESLint configuration
+## 📌 Requisitos previos
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Antes de ejecutar el proyecto, asegúrate de tener instalado:
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+- [✔ Node.js](https://nodejs.org/) (versión 14 o superior)
+
+---
+
+## 📌 Configuración del entorno
+
+**Clona el repositorio**
+
+```bash
+git clone https://github.com/marcio32/SurisFront.git
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+**Instala las dependencias**
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Navega al directorio del proyecto y ejecuta:
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```bash
+npm install
 ```
+
+**Configura las variables de entorno**
+
+Crea un archivo `.env` en la raíz del proyecto y añade la URL de la API de Suris:
+
+```
+VITE_API_URL=http://localhost:7163/api
+```
+
+## 📌 Ejecutar la aplicación
+
+Inicia el servidor de desarrollo:
+
+```bash
+npm run dev
+```
+
+La aplicación estará disponible en:
+
+```
+http://localhost:5173
+```
+
+## 📌 Autenticación y uso
+
+Para acceder a las funcionalidades protegidas, primero debes iniciar sesión. La aplicación proporciona un formulario de inicio de sesión donde puedes ingresar tus credenciales. Una vez autenticado, el token JWT se almacena y se utiliza para las solicitudes subsiguientes a la API.
+
+## 📌 Tecnologías utilizadas
+
+- **React**: Biblioteca para construir interfaces de usuario.
+- **TypeScript**: Superset de JavaScript que añade tipado estático.
+- **Vite**: Herramienta de construcción y servidor de desarrollo rápido.
+- **React Router**: Para la gestión de rutas en la aplicación.
+- **Axios**: Cliente HTTP para realizar solicitudes a la API.
+- **Material UI**: Para el estilizado de componentes.
+
+## 📌 Notas adicionales
+
+- Asegúrate de que la API de Suris esté en funcionamiento y accesible en la URL configurada en el archivo `.env`.
